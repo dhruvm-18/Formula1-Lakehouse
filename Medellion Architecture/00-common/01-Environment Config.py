@@ -1,0 +1,9 @@
+# Databricks notebook source
+catalog_name = 'formula1'
+bronze_schema = 'bronze'
+silver_schema = 'silver'
+gold_schema = 'gold'
+
+# COMMAND ----------
+
+landings_folder_path = '/Volumes/formula1/landing/files'

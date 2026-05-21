@@ -1,0 +1,70 @@
+# Databricks notebook source
+# MAGIC %run "../00-common/01-Environment Config"
+
+# COMMAND ----------
+
+bronze_table = f"{catalog_name}.{bronze_schema}.constructors"
+silver_table = f"{catalog_name}.{silver_schema}.constructors"
+
+# COMMAND ----------
+
+constructors_df = spark.table(bronze_table)
+
+# COMMAND ----------
+
+display(constructors_df)
+
+# COMMAND ----------
+
+constructors_dropped_df = constructors_df.drop("url")
+
+# COMMAND ----------
+
+from pyspark.sql import functions as F
+
+# COMMAND ----------
+
+constructors_renamed_df = (
+    constructors_dropped_df
+    .withColumnRenamed("constructorId", "constructor_id")
+    .withColumnRenamed("name", "consutructor_name")
+)
+
+# COMMAND ----------
+
+display(constructors_renamed_df)
+
+# COMMAND ----------
+
+constructors_distinct_df = constructors_renamed_df.dropDuplicates(
+    ["constructor_id"]
+)
+
+# COMMAND ----------
+
+display(constructors_distinct_df)
+
+# COMMAND ----------
+
+constructors_final_df = (
+    constructors_distinct_df
+    .withColumn('nationality',F.initcap(F.col("nationality")))
+)
+
+# COMMAND ----------
+
+display(constructors_final_df)
+
+# COMMAND ----------
+
+(
+    constructors_final_df
+        .write
+        .format("delta")
+        .mode("overwrite")
+        .saveAsTable(silver_table)
+)
+
+# COMMAND ----------
+
+display(spark.table(silver_table))
