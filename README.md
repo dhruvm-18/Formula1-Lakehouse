@@ -36,6 +36,38 @@ The project follows the **Bronze → Silver → Gold** Medallion Architecture us
 
 ---
 
+# 🖼️ Project Architecture & Workflow Screenshots
+
+## 📂 Project Directory Structure
+
+![Project Directory](images/Directory.png)
+
+---
+
+## ⚙️ Batch Processing Directory Workflow
+
+![Batch Processing Directory](images/BatchProcessDirectory.png)
+
+---
+
+## ☁️ Azure Databricks Cluster Setup
+
+![Cluster Setup](images/ClusterSetup.png)
+
+---
+
+## 🔄 Main Orchestration Workflow
+
+![Main Job Workflow](images/MainJob.png)
+
+---
+
+## 🏗️ Lakehouse Processing Pipeline
+
+![Lakehouse Job](images/LakehouseJob.png)
+
+---
+
 # ⚙️ Features
 
 - End-to-end Lakehouse implementation
@@ -68,10 +100,27 @@ This eliminates manual notebook execution and simulates real-world enterprise da
 
 # 📊 Dashboards Created
 
-- 🏁 Driver Championship Standings
-- 🏁 Constructor Championship Standings
-- 🏁 Dominant Drivers of All Time
-- 🏁 Dominant Teams of All Time
+## 🏁 Driver Championship Standings
+
+![Dashboard 1](images/Dashboard%201.png)
+
+---
+
+## 🏎️ Constructor Championship Standings
+
+![Dashboard 2](images/Dashboard%202.png)
+
+---
+
+## 👑 Dominant Drivers of All Time
+
+![Dashboard 3](images/Dashboard%203.png)
+
+---
+
+## 🚀 Dominant Teams of All Time
+
+![Dashboard 4](images/Dashboard%204.png)
 
 ---
 
@@ -79,7 +128,7 @@ This eliminates manual notebook execution and simulates real-world enterprise da
 
 To identify dominant drivers and teams across different Formula 1 eras, a custom **Greatness Score** metric system was designed.
 
-## Scoring Logic
+## 📌 Scoring Logic
 
 - Championship = 100 Points
 - Race Win = 10 Points
@@ -87,16 +136,20 @@ To identify dominant drivers and teams across different Formula 1 eras, a custom
 
 This helped create a balanced performance comparison model across multiple generations of Formula 1.
 
+## 📈 Greatness Score Visualization
+
+![Greatness Score](images/GreatnessScore.png)
+
 ---
 
 # 🛠️ Tech Stack
 
-## Cloud & Data Platform
+## ☁️ Cloud & Data Platform
 - Azure Databricks
 - Azure Data Lake Storage
 - Unity Catalog
 
-## Data Engineering
+## ⚡ Data Engineering
 - PySpark
 - SQL
 - Delta Lake
@@ -104,7 +157,7 @@ This helped create a balanced performance comparison model across multiple gener
 - Incremental Processing
 - Workflow Orchestration
 
-## Analytics & Visualization
+## 📊 Analytics & Visualization
 - Power BI
 
 ---
@@ -152,8 +205,10 @@ Through this project, I gained hands-on experience with:
 
 # 👨‍💻 Author
 
-**Dhruv Mendiratta**
+## Dhruv Mendiratta
 
 - GitHub: https://github.com/dhruvm-18
 - LinkedIn: https://www.linkedin.com/in/dhruvmendiratta18/
 - Portfolio: https://dhruv-portfolio-bay.vercel.app/
+
+---
